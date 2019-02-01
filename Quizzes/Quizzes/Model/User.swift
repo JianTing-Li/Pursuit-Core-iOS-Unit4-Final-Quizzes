@@ -1,5 +1,5 @@
 //
-//  UserDefaultsKeys.swift
+//  User.swift
 //  Quizzes
 //
 //  Created by Jian Ting Li on 2/1/19.
@@ -8,6 +8,7 @@
 
 import Foundation
 
-struct UserDefaultsKeys {
-    static let currentUserName = "currentUserName"
+struct User: Codable {
+    let username: String
+    let photoData: Data
 }
