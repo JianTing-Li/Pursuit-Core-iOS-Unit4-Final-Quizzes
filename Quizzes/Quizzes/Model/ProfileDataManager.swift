@@ -44,19 +44,16 @@ final class ProfileDataManager {
     }
     
     public static func addNewUser(newUser: User) {
-        let _ = fetchAllUsers()
         allUsers.append(newUser)
         saveToDocumentDirectory()
     }
 
     public static func deleteUser(user: User, atIndex index: Int) {
-        let _ = fetchAllUsers()
         allUsers.remove(at: index)
         saveToDocumentDirectory()
     }
 
     public static func updateUserInfo(updatedUser: User, atIndex index: Int) {
-        let _ = fetchAllUsers()
         allUsers[index] = updatedUser
         saveToDocumentDirectory()
     }

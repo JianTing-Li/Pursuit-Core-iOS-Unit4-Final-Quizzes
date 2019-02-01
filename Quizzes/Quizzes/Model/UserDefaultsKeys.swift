@@ -9,5 +9,5 @@
 import Foundation
 
 struct UserDefaultsKeys {
-    static let currentUserName = "currentUserName"
+    static let lastUserName = "lastUserName"
 }

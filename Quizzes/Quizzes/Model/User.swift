@@ -10,5 +10,5 @@ import Foundation
 
 struct User: Codable {
     let username: String
-    let photoData: Data
+    let photoData: Data?
 }
