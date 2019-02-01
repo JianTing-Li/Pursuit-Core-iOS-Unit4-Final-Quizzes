@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hj1-Us-5c8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Quiz View Controller-->
+        <scene sceneID="urZ-is-Kx8">
+            <objects>
+                <viewController id="qjo-cH-5sf" customClass="QuizViewController" customModule="Quizzes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6ow-s2-wtN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="uyL-Qv-8Mt"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7vb-jK-JaI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XWe-ym-PEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1476" y="-251"/>
+        </scene>
+        <!--Quiz Detail View Controller-->
+        <scene sceneID="krz-ci-xZn">
+            <objects>
+                <viewController id="N4T-9t-QAJ" customClass="QuizDetailViewController" customModule="Quizzes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vkp-Tt-fhU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ehb-ir-kxn"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bka-49-QSB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-590" y="-251"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="aqX-W8-IDc">
+            <objects>
+                <viewController id="9By-ZX-bUp" customClass="SearchQuizViewController" customModule="Quizzes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TR8-b8-V44">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="tpB-vg-FRD"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="search-icon" id="hyg-ZZ-hS4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ou3-Yl-n9M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1476" y="481"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="jF0-Xo-PQY">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="hj1-Us-5c8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nU1-Mn-XcH">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="zDD-jg-KN9" kind="relationship" relationship="viewControllers" id="IfF-6e-LPC"/>
+                        <segue destination="9By-ZX-bUp" kind="relationship" relationship="viewControllers" id="qg0-NN-b7o"/>
+                        <segue destination="jpo-cm-YZ5" kind="relationship" relationship="viewControllers" id="pUO-So-UrF"/>
+                        <segue destination="lb5-aG-y1f" kind="relationship" relationship="viewControllers" id="TD8-gm-nLe"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IMC-bJ-rN4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2438" y="481"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="IgO-Uc-l7i">
+            <objects>
+                <viewController id="lb5-aG-y1f" customClass="ProfileViewController" customModule="Quizzes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lsx-9L-aY1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="aRf-d6-mGa"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile-unfilled" id="5b3-Lt-tml"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7bi-xE-6J2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2417" y="1356"/>
+        </scene>
+        <!--Create-->
+        <scene sceneID="6l0-yS-eSg">
+            <objects>
+                <viewController id="jpo-cm-YZ5" customClass="CreateQuizViewController" customModule="Quizzes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f3L-xP-gz0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="mVy-bp-kv5"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Create" image="create-icon" id="KaE-u7-TJ5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rko-km-dzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1476" y="1200"/>
+        </scene>
+        <!--Quizes-->
+        <scene sceneID="oKl-Me-LOc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zDD-jg-KN9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Quizes" image="quiz-icon" id="o2e-kB-lQ2"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EPl-Lu-nFI">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qjo-cH-5sf" kind="relationship" relationship="rootViewController" id="bVB-m2-18Z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v7I-3O-O0H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2415" y="-251"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="create-icon" width="25" height="25"/>
+        <image name="profile-unfilled" width="24" height="24"/>
+        <image name="quiz-icon" width="25" height="25"/>
+        <image name="search-icon" width="25" height="25"/>
+    </resources>
+</document>
