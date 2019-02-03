@@ -31,7 +31,7 @@ class ProfileViewController: UIViewController {
     }
     
     private func initialSetup() {
-        allUsers = ProfileDataManager.fetchAllUsers()
+        allUsers = UserDataManager.fetchAllUsers()
         setupImagePickerViewController()
         //profileImage.layer.cornerRadius = profileImage.bounds.width / 2
         checkUserDefaults()
@@ -61,10 +61,10 @@ class ProfileViewController: UIViewController {
                 //show alert to user
                 return
             }
-            let newUser = User.init(username: newUserName, photoData: nil)
-            ProfileDataManager.addNewUser(newUser: newUser)
+            let newUser = User.init(username: newUserName, photoData: nil, quizes: [Quiz]())
+            UserDataManager.addNewUser(newUser: newUser)
             self.currentUser = newUser
-            self.allUsers = ProfileDataManager.fetchAllUsers()
+            self.allUsers = UserDataManager.fetchAllUsers()
             UserDefaults.standard.set(newUserName, forKey: UserDefaultsKeys.lastUserName)
         }
         
@@ -108,13 +108,13 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     
     private func updateUserPhoto(user: User?, image: UIImage) {
         guard let currentUser = user else { return }
-        let updatedUser = User.init(username: (currentUser.username), photoData: image.jpegData(compressionQuality: 0.5))
-        let index = ProfileDataManager.fetchAllUsers().firstIndex { $0.username == currentUser.username }
+        let updatedUser = User.init(username: currentUser.username, photoData: image.jpegData(compressionQuality: 0.5), quizes: currentUser.quizes)
+        let index = UserDataManager.fetchAllUsers().firstIndex { $0.username == currentUser.username }
         if let _ = index {
-            ProfileDataManager.updateUserInfo(updatedUser: updatedUser, atIndex: index!)
-            ProfileDataManager.saveToDocumentDirectory()
+            UserDataManager.updateUserInfo(updatedUser: updatedUser, atIndex: index!)
+            UserDataManager.saveToDocumentDirectory()
             self.currentUser = updatedUser
-            self.allUsers = ProfileDataManager.fetchAllUsers()
+            self.allUsers = UserDataManager.fetchAllUsers()
         }
     }
 }

@@ -9,5 +9,6 @@
 import UIKit
 
 class QuizCell: UICollectionViewCell {
-    
+    // plus button
+    // label
 }

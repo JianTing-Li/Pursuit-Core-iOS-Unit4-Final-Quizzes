@@ -30,8 +30,7 @@
 		D63FD1DC2204B93C0099C8E4 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63FD1DB2204B93C0099C8E4 /* Quiz.swift */; };
 		D63FD1DE2204B9530099C8E4 /* QuizAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63FD1DD2204B9530099C8E4 /* QuizAPIClient.swift */; };
 		D63FD1E02204B9990099C8E4 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63FD1DF2204B9990099C8E4 /* UserDefaultsKeys.swift */; };
-		D63FD1E22204B9D40099C8E4 /* ProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63FD1E12204B9D40099C8E4 /* ProfileDataManager.swift */; };
-		D63FD1E42204B9FA0099C8E4 /* QuizDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63FD1E32204B9FA0099C8E4 /* QuizDataManager.swift */; };
+		D63FD1E22204B9D40099C8E4 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63FD1E12204B9D40099C8E4 /* UserDataManager.swift */; };
 		D63FD1E62204CCD90099C8E4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63FD1E52204CCD90099C8E4 /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,8 +60,7 @@
 		D63FD1DB2204B93C0099C8E4 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		D63FD1DD2204B9530099C8E4 /* QuizAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAPIClient.swift; sourceTree = "<group>"; };
 		D63FD1DF2204B9990099C8E4 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
-		D63FD1E12204B9D40099C8E4 /* ProfileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataManager.swift; sourceTree = "<group>"; };
-		D63FD1E32204B9FA0099C8E4 /* QuizDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDataManager.swift; sourceTree = "<group>"; };
+		D63FD1E12204B9D40099C8E4 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
 		D63FD1E52204CCD90099C8E4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,11 +172,10 @@
 		D63FD1C22204B4280099C8E4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D63FD1DB2204B93C0099C8E4 /* Quiz.swift */,
 				D63FD1DF2204B9990099C8E4 /* UserDefaultsKeys.swift */,
-				D63FD1E12204B9D40099C8E4 /* ProfileDataManager.swift */,
+				D63FD1E12204B9D40099C8E4 /* UserDataManager.swift */,
 				D63FD1E52204CCD90099C8E4 /* User.swift */,
-				D63FD1E32204B9FA0099C8E4 /* QuizDataManager.swift */,
+				D63FD1DB2204B93C0099C8E4 /* Quiz.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,7 +273,6 @@
 				D63FD1C52204B5030099C8E4 /* VC+Extensions.swift in Sources */,
 				D63FD1CE2204B5C40099C8E4 /* SearchCell.swift in Sources */,
 				D63FD1D82204B6B40099C8E4 /* CreateQuizViewController.swift in Sources */,
-				D63FD1E42204B9FA0099C8E4 /* QuizDataManager.swift in Sources */,
 				577118C12203796A00B9DD0B /* AppDelegate.swift in Sources */,
 				D63FD1DA2204B72E0099C8E4 /* ProfileViewController.swift in Sources */,
 				D63FD1DC2204B93C0099C8E4 /* Quiz.swift in Sources */,
@@ -285,7 +281,7 @@
 				D63FD1D02204B5F60099C8E4 /* QuizCell.swift in Sources */,
 				D63FD1E02204B9990099C8E4 /* UserDefaultsKeys.swift in Sources */,
 				D63FD1CC2204B5860099C8E4 /* SearchQuizView.swift in Sources */,
-				D63FD1E22204B9D40099C8E4 /* ProfileDataManager.swift in Sources */,
+				D63FD1E22204B9D40099C8E4 /* UserDataManager.swift in Sources */,
 				D63FD1D22204B6590099C8E4 /* QuizViewController.swift in Sources */,
 				577118D522037A9F00B9DD0B /* AppError.swift in Sources */,
 				577118DA22037B5B00B9DD0B /* DataPersistenceManager.swift in Sources */,

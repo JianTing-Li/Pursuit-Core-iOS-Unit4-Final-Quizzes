@@ -9,22 +9,54 @@
 import UIKit
 
 class SearchQuizViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    let searchQuizView = SearchQuizView()
+    
+    var onlineQuizzes = [Quiz]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.searchQuizView.searchQuizesCollectionView.reloadData()
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.addSubview(searchQuizView)
+        searchQuizView.deleagte = self
+        fetchQuizesOnline()
     }
-    */
+    
+    private func fetchQuizesOnline() {
+        QuizAPIClient.getAllOnlineQuizzes { (appError, quizzes) in
+            if let appError = appError {
+                print(appError.errorMessage())
+                self.showAlert(title: "", message: appError.errorMessage())
+            } else if let quizzes = quizzes {
+                self.onlineQuizzes = quizzes
+            }
+        }
+    }
+}
 
+extension SearchQuizViewController: SearchQuizViewDelegate, SearchCellDelegate {
+    
+    func setupNumberOfItemsInCollectionView() -> Int {
+        return onlineQuizzes.count
+    }
+    
+    func setupCollectionViewCell(indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = searchQuizView.searchQuizesCollectionView.dequeueReusableCell(withReuseIdentifier: "SearchCell", for: indexPath) as? SearchCell else { return UICollectionViewCell() }
+        cell.delegate = self
+        let currentQuiz = onlineQuizzes[indexPath.row]
+        cell.addToMyQuizzesButton.tag = indexPath.row
+        cell.configureCellUI(quiz: currentQuiz)
+        return cell
+    }
+    
+    func buttonPressed(tag: Int) {
+        let quizGoingToAdd = onlineQuizzes[tag]
+        // * add quiz here
+        showAlert(title: "\"\(quizGoingToAdd.quizTitle)\" was added to your Quiz Collection", message: nil)
+    }
 }

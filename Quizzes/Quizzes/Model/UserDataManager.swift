@@ -1,5 +1,5 @@
 //
-//  ProfileDataManager.swift
+//  UserDataManager.swift
 //  Quizzes
 //
 //  Created by Jian Ting Li on 2/1/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class ProfileDataManager {
+final class UserDataManager {
     private init() {}
 
     private static let filename = "UserList.plist"
