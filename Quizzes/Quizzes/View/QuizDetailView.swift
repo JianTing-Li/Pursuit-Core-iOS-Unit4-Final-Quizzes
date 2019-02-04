@@ -19,7 +19,7 @@ class QuizDetailView: UIView {
     
     lazy var quizDetailCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize.init(width: 100, height: 200)
+        layout.itemSize = CGSize.init(width: 340, height: 430)
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         
         let cv = UICollectionView.init(frame: frame, collectionViewLayout: layout)
@@ -29,10 +29,26 @@ class QuizDetailView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
+        commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        commonInit()
+    }
+    
+    private func commonInit() {
+        setupConstraints()
+    }
+    
+    private func setupConstraints() {
+        addSubview(quizDetailCollectionView)
+        quizDetailCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        quizDetailCollectionView.register(QuizDetailCell.self, forCellWithReuseIdentifier: "QuizDetailCell")
+        quizDetailCollectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+        quizDetailCollectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        quizDetailCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0).isActive = true
+        quizDetailCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0).isActive = true
     }
 }
 

@@ -40,7 +40,25 @@ extension QuizDetailViewController: QuizDetailViewDelegate {
     
     func setCollectionViewCell(indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = quizDetailView.quizDetailCollectionView.dequeueReusableCell(withReuseIdentifier: "QuizDetailCell", for: indexPath) as? QuizDetailCell else { return UICollectionViewCell() }
-        //configure cell here
+        cell.configureCell(quizTitle: quiz.quizTitle, tag: indexPath.row)
+        cell.delegate = self
         return cell
+    }
+}
+
+extension QuizDetailViewController: QuizDetailCellDelegate {
+    func animationButtonPressed(tag: Int) {
+        let quizTitle = quiz.quizTitle
+        let quizFact = quiz.facts[tag]
+//        if cat.imageView?.image == UIImage(named: "cat") {
+//            UIView.transition(with: cat, duration: 2.0, options: [.transitionFlipFromRight], animations: {
+//                self.cat.setImage(UIImage(named: "dog"), for: .normal)
+//            })
+//        } else {
+//            UIView.transition(with: cat, duration: 2.0, options: [.transitionFlipFromLeft], animations: {
+//                self.cat.setImage(UIImage(named: "cat"), for: .normal)
+//            })
+//        }
+        
     }
 }
