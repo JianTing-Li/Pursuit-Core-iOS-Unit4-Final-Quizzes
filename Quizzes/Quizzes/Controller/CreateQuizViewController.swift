@@ -25,7 +25,8 @@ class CreateQuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTextViews()
+        resetTextViews()
+        conformTextFieldsToDelegate()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,10 +51,13 @@ class CreateQuizViewController: UIViewController {
         return false
     }
     
-    private func setupTextViews() {
+    private func conformTextFieldsToDelegate() {
         quizTitleTextView.delegate = self
         fact1TextView.delegate = self
         fact2TextView.delegate = self
+    }
+    
+    private func resetTextViews() {
         quizTitleTextView.text = quizTitlePlaceholder
         quizTitleTextView.textColor = .lightGray
         fact1TextView.text = fact1Placeholder
@@ -83,6 +87,7 @@ class CreateQuizViewController: UIViewController {
         currentUser?.quizzes.append(newQuiz)
         UserDataManager.updateUserInfo(updatedUser: currentUser!, atIndex: userIndex!)
         showAlert(title: "Success", message: "\"\(quizTitle)\" added to your quizzes")
+        resetTextViews()
     }
     
 }
