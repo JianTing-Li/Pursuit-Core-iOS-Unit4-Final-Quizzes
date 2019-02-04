@@ -20,7 +20,7 @@ final class UserDataManager {
         if FileManager.default.fileExists(atPath: path) {
             if let data = FileManager.default.contents(atPath: path) {
                 do {
-                    allUsers = try PropertyListDecoder().decode([User].self, from: data)
+                    self.allUsers = try PropertyListDecoder().decode([User].self, from: data)
                 } catch {
                     print(AppError.propertyListDecodingError(error).errorMessage())
                 }
@@ -34,6 +34,7 @@ final class UserDataManager {
     }
 
     public static func saveToDocumentDirectory() {
+        print(allUsers.count.description + " Users On List")
         let path = DataPersistenceManager.filepathToDocumentsDiretory(filename: filename)
         do {
             let data = try PropertyListEncoder().encode(allUsers)
@@ -48,7 +49,15 @@ final class UserDataManager {
         saveToDocumentDirectory()
     }
 
-    public static func deleteUser(user: User, atIndex index: Int) {
+    public static func deleteUser(username: String, atIndex index: Int) {
+//        let index = allUsers.firstIndex { $0.username == username }
+//        if let _ = index {
+//            allUsers.remove(at: index!)
+//            saveToDocumentDirectory()
+//        } else {
+//            print("Delete failed: fail to get index")
+//            // custom deleate to show alert
+//        }
         allUsers.remove(at: index)
         saveToDocumentDirectory()
     }
