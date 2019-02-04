@@ -20,11 +20,20 @@ class SearchQuizViewController: UIViewController {
         }
     }
     
+    var currentUser: User?
+    var userIndex: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(searchQuizView)
         searchQuizView.deleagte = self
-        fetchQuizesOnline()
+        initialSetup()
+    }
+    
+    private func initialSetup() {
+        if getCurrentUser() {
+            fetchQuizesOnline()
+        }
     }
     
     private func fetchQuizesOnline() {
@@ -36,6 +45,18 @@ class SearchQuizViewController: UIViewController {
                 self.onlineQuizzes = quizzes
             }
         }
+    }
+    
+    private func getCurrentUser() -> Bool {
+        if let lastUserName = UserDefaults.standard.object(forKey: UserDefaultsKeys.lastUserName) as? String {
+            let index = UserDataManager.fetchAllUsers().firstIndex { $0.username == lastUserName }
+            if let _ = index {
+                self.currentUser = UserDataManager.fetchAllUsers()[index!]
+                self.userIndex = index
+                return true
+            }
+        }
+        return false
     }
 }
 
@@ -56,7 +77,14 @@ extension SearchQuizViewController: SearchQuizViewDelegate, SearchCellDelegate {
     
     func buttonPressed(tag: Int) {
         let quizGoingToAdd = onlineQuizzes[tag]
-        // * add quiz here
+        currentUser?.quizzes.append(quizGoingToAdd)
+        print("The user has \(currentUser?.quizzes.count) quizzes")
+        guard let updatedUser = currentUser, let userIndex = userIndex else {
+            print("currentUser / userIndex is nil")
+            showAlert(title: "Fail to add Quiz ☹️", message: nil)
+            return
+        }
+        UserDataManager.updateUserInfo(updatedUser: updatedUser, atIndex: userIndex)
         showAlert(title: "\"\(quizGoingToAdd.quizTitle)\" was added to your Quiz Collection", message: nil)
     }
 }

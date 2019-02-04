@@ -71,7 +71,7 @@ class ProfileViewController: UIViewController {
                 return
             }
             
-            let newUser = User.init(username: newUserName, userID: UUID().uuidString, photoData: nil, quizes: [Quiz]())
+            let newUser = User.init(username: newUserName, userID: UUID().uuidString, photoData: nil, quizzes: [Quiz]())
             UserDataManager.addNewUser(newUser: newUser)
             self.currentUser = newUser
             self.allUsers = UserDataManager.fetchAllUsers()
@@ -118,7 +118,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     
     private func updateUserPhoto(image: UIImage) {
         guard let currentUser = currentUser else { return }
-        let updatedUser = User.init(username: currentUser.username, userID: currentUser.userID, photoData: image.jpegData(compressionQuality: 0.5), quizes: currentUser.quizes)
+        let updatedUser = User.init(username: currentUser.username, userID: currentUser.userID, photoData: image.jpegData(compressionQuality: 0.5), quizzes: currentUser.quizzes)
         
         let index = allUsers.firstIndex { $0.username == updatedUser.username }
         if let _ = index {

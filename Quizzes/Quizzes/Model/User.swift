@@ -12,5 +12,5 @@ struct User: Codable {
     let username: String
     let userID: String // UUID().uuidString
     let photoData: Data?
-    var quizes: [Quiz]
+    var quizzes: [Quiz]
 }
