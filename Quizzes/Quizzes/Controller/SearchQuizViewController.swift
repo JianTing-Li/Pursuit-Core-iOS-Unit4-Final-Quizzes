@@ -42,7 +42,7 @@ class SearchQuizViewController: UIViewController {
                 print(appError.errorMessage())
                 self.showAlert(title: "", message: appError.errorMessage())
             } else if let quizzes = quizzes {
-                self.onlineQuizzes = quizzes
+                self.onlineQuizzes = quizzes.sorted { $0.quizTitle < $1.quizTitle }
             }
         }
     }

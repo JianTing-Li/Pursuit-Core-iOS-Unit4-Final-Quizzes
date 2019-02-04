@@ -15,6 +15,7 @@
 		577118DA22037B5B00B9DD0B /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577118D922037B5B00B9DD0B /* DataPersistenceManager.swift */; };
 		577118DD22037B8E00B9DD0B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577118DC22037B8E00B9DD0B /* Date+Extensions.swift */; };
 		577118DF22037BAA00B9DD0B /* String+DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577118DE22037BAA00B9DD0B /* String+DateExtensions.swift */; };
+		D6071D302208A58900BBDFA3 /* QuizDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6071D2F2208A58900BBDFA3 /* QuizDetailCell.swift */; };
 		D63FD1BF2204B0EC0099C8E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D63FD1BE2204B0EC0099C8E4 /* Main.storyboard */; };
 		D63FD1C52204B5030099C8E4 /* VC+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63FD1C42204B5030099C8E4 /* VC+Extensions.swift */; };
 		D63FD1C82204B5310099C8E4 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63FD1C72204B5310099C8E4 /* UIColor+Extensions.swift */; };
@@ -45,6 +46,7 @@
 		577118D922037B5B00B9DD0B /* DataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
 		577118DC22037B8E00B9DD0B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		577118DE22037BAA00B9DD0B /* String+DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DateExtensions.swift"; sourceTree = "<group>"; };
+		D6071D2F2208A58900BBDFA3 /* QuizDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDetailCell.swift; sourceTree = "<group>"; };
 		D63FD1BE2204B0EC0099C8E4 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D63FD1C42204B5030099C8E4 /* VC+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC+Extensions.swift"; sourceTree = "<group>"; };
 		D63FD1C72204B5310099C8E4 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
@@ -162,8 +164,9 @@
 			isa = PBXGroup;
 			children = (
 				D63FD1C92204B5750099C8E4 /* QuizDetailView.swift */,
-				D63FD1CF2204B5F60099C8E4 /* QuizCell.swift */,
 				D63FD1CB2204B5860099C8E4 /* SearchQuizView.swift */,
+				D63FD1CF2204B5F60099C8E4 /* QuizCell.swift */,
+				D6071D2F2208A58900BBDFA3 /* QuizDetailCell.swift */,
 				D63FD1CD2204B5C40099C8E4 /* SearchCell.swift */,
 			);
 			path = View;
@@ -270,6 +273,7 @@
 				D63FD1D62204B6990099C8E4 /* SearchQuizViewController.swift in Sources */,
 				D63FD1D42204B6670099C8E4 /* QuizDetailViewController.swift in Sources */,
 				577118D722037ABA00B9DD0B /* NetworkHelper.swift in Sources */,
+				D6071D302208A58900BBDFA3 /* QuizDetailCell.swift in Sources */,
 				D63FD1C52204B5030099C8E4 /* VC+Extensions.swift in Sources */,
 				D63FD1CE2204B5C40099C8E4 /* SearchCell.swift in Sources */,
 				D63FD1D82204B6B40099C8E4 /* CreateQuizViewController.swift in Sources */,

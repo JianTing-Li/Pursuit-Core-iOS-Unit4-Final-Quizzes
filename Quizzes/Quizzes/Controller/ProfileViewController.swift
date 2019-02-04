@@ -33,7 +33,11 @@ class ProfileViewController: UIViewController {
     private func initialSetup() {
         setupImagePickerViewController()
         checkUserDefaults()
-        //profileImage.layer.cornerRadius = profileImage.bounds.width / 2
+//         profileImage.layer.cornerRadius = profileImage.bounds.width / 2
+//        profileView.image = profileImage
+        profileImage.layer.cornerRadius = profileImage.bounds.width / 2
+        profileImage.clipsToBounds = true
+        profileImage.layer.masksToBounds = true
     }
     
     private func checkUserDefaults() {

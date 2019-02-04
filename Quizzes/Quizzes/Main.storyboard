@@ -27,13 +27,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xtq-1E-emE">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="QuizCell" id="xtq-1E-emE" customClass="QuizCell" customModule="Quizzes" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -48,6 +49,9 @@
                         <viewLayoutGuide key="safeArea" id="uyL-Qv-8Mt"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Quizzes" id="7vb-jK-JaI"/>
+                    <connections>
+                        <outlet property="myQuizzesCollectionView" destination="Kss-sJ-Yu9" id="Q9R-Ji-shS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XWe-ym-PEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

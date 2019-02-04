@@ -39,7 +39,7 @@ class CreateQuizViewController: UIViewController {
         if !createQuizButton.isEnabled { showAlert(title: "Not Login", message: "Please Login to create quiz") }
     }
     
-    private func getCurrentUser() -> Bool {
+    private func getCurrentUser() -> Bool  { // User?
         if let lastUserName = UserDefaults.standard.object(forKey: UserDefaultsKeys.lastUserName) as? String {
             let index = UserDataManager.fetchAllUsers().firstIndex { $0.username == lastUserName }
             if let _ = index {

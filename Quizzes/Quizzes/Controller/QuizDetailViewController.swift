@@ -9,9 +9,38 @@
 import UIKit
 
 class QuizDetailViewController: UIViewController {
-
+    
+    let quizDetailView = QuizDetailView()
+    var quiz: Quiz!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    init(quiz: Quiz) {
+        super.init(nibName: nil, bundle: nil)
+        self.quiz = quiz
+        setupUI()
+    }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupUI()
+    }
+    
+    private func setupUI() {
+        self.view.addSubview(quizDetailView)
+        quizDetailView.delegate = self
+    }
+}
 
+extension QuizDetailViewController: QuizDetailViewDelegate {
+    func getNumberOfFacts() -> Int {
+        return quiz.facts.count
+    }
+    
+    func setCollectionViewCell(indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = quizDetailView.quizDetailCollectionView.dequeueReusableCell(withReuseIdentifier: "QuizDetailCell", for: indexPath) as? QuizDetailCell else { return UICollectionViewCell() }
+        //configure cell here
+        return cell
+    }
 }
