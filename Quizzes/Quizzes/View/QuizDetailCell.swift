@@ -8,8 +8,11 @@
 
 import UIKit
 
+// ToDO: Transition the whole Cell!!
+
 protocol QuizDetailCellDelegate: AnyObject {
-    func animationButtonPressed(tag: Int)
+    func getQuizTitle(tag: Int) -> String
+    func getQuizFact(tag: Int) -> String
 }
 
 class QuizDetailCell: UICollectionViewCell {
@@ -18,6 +21,7 @@ class QuizDetailCell: UICollectionViewCell {
     
     lazy var flashCardButton: UIButton = {
         let button = UIButton()
+        button.backgroundColor = .white
         button.setTitle("Quiz Title / Fact", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(textTransition), for: .touchUpInside)
@@ -35,7 +39,7 @@ class QuizDetailCell: UICollectionViewCell {
     }
     
     private func commonInit() {
-        backgroundColor = .white
+        backgroundColor = .clear
         setupCellConstraints()
     }
     
@@ -54,6 +58,17 @@ class QuizDetailCell: UICollectionViewCell {
     }
     
     @objc private func textTransition() {
-        delegate?.animationButtonPressed(tag: flashCardButton.tag)
+        let quizTitle = delegate?.getQuizFact(tag: flashCardButton.tag)
+        let quizFact = delegate?.getQuizFact(tag: flashCardButton.tag)
+        
+        if flashCardButton.titleLabel?.text == quizTitle {
+            UIView.transition(with: flashCardButton, duration: 2.0, options: [.transitionFlipFromRight], animations: {
+                self.flashCardButton.setTitle((quizFact), for: .normal)
+            })
+        } else {
+            UIView.transition(with: flashCardButton, duration: 2.0, options: [.transitionFlipFromLeft], animations: {
+                self.flashCardButton.setTitle(quizTitle, for: .normal)
+            })
+        }
     }
 }

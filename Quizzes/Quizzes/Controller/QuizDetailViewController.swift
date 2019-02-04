@@ -47,18 +47,13 @@ extension QuizDetailViewController: QuizDetailViewDelegate {
 }
 
 extension QuizDetailViewController: QuizDetailCellDelegate {
-    func animationButtonPressed(tag: Int) {
-        let quizTitle = quiz.quizTitle
-        let quizFact = quiz.facts[tag]
-//        if cat.imageView?.image == UIImage(named: "cat") {
-//            UIView.transition(with: cat, duration: 2.0, options: [.transitionFlipFromRight], animations: {
-//                self.cat.setImage(UIImage(named: "dog"), for: .normal)
-//            })
-//        } else {
-//            UIView.transition(with: cat, duration: 2.0, options: [.transitionFlipFromLeft], animations: {
-//                self.cat.setImage(UIImage(named: "cat"), for: .normal)
-//            })
-//        }
-        
+    func getQuizTitle(tag: Int) -> String {
+        return quiz.quizTitle
     }
+    
+    func getQuizFact(tag: Int) -> String {
+        return quiz.facts[tag]
+    }
+    
+
 }
