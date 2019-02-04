@@ -9,21 +9,49 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Quiz View Controller-->
+        <!--My Quizzes-->
         <scene sceneID="urZ-is-Kx8">
             <objects>
                 <viewController id="qjo-cH-5sf" customClass="QuizViewController" customModule="Quizzes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6ow-s2-wtN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kss-sJ-Yu9">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" red="0.1764705882352941" green="0.20392156862745098" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="b5k-3T-pRW">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xtq-1E-emE">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Kss-sJ-Yu9" firstAttribute="bottom" secondItem="uyL-Qv-8Mt" secondAttribute="bottom" id="Azg-vL-gIc"/>
+                            <constraint firstItem="Kss-sJ-Yu9" firstAttribute="top" secondItem="uyL-Qv-8Mt" secondAttribute="top" id="Xxa-FN-jxe"/>
+                            <constraint firstItem="Kss-sJ-Yu9" firstAttribute="leading" secondItem="uyL-Qv-8Mt" secondAttribute="leading" id="jGx-AB-dy4"/>
+                            <constraint firstItem="Kss-sJ-Yu9" firstAttribute="trailing" secondItem="uyL-Qv-8Mt" secondAttribute="trailing" id="vbf-5z-nKD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="uyL-Qv-8Mt"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7vb-jK-JaI"/>
+                    <navigationItem key="navigationItem" title="My Quizzes" id="7vb-jK-JaI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XWe-ym-PEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1476" y="-251"/>
+            <point key="canvasLocation" x="-1476" y="-251.42428785607197"/>
         </scene>
         <!--Quiz Detail View Controller-->
         <scene sceneID="krz-ci-xZn">
@@ -40,7 +68,7 @@
             </objects>
             <point key="canvasLocation" x="-590" y="-251"/>
         </scene>
-        <!--Search-->
+        <!--Search Quizzes Online-->
         <scene sceneID="aqX-W8-IDc">
             <objects>
                 <viewController id="9By-ZX-bUp" customClass="SearchQuizViewController" customModule="Quizzes" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,11 +78,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="tpB-vg-FRD"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="search-icon" id="hyg-ZZ-hS4"/>
+                    <navigationItem key="navigationItem" title="Search Quizzes Online" id="raC-SL-PBh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ou3-Yl-n9M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1476" y="481"/>
+            <point key="canvasLocation" x="-536.79999999999995" y="480.80959520239884"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jF0-Xo-PQY">
@@ -62,12 +90,13 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="hj1-Us-5c8" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nU1-Mn-XcH">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="zDD-jg-KN9" kind="relationship" relationship="viewControllers" id="IfF-6e-LPC"/>
-                        <segue destination="9By-ZX-bUp" kind="relationship" relationship="viewControllers" id="qg0-NN-b7o"/>
+                        <segue destination="rUF-Ff-6Vc" kind="relationship" relationship="viewControllers" id="qg0-NN-b7o"/>
                         <segue destination="jpo-cm-YZ5" kind="relationship" relationship="viewControllers" id="pUO-So-UrF"/>
                         <segue destination="lb5-aG-y1f" kind="relationship" relationship="viewControllers" id="TD8-gm-nLe"/>
                     </connections>
@@ -164,14 +193,82 @@
                     <view key="view" contentMode="scaleToFill" id="f3L-xP-gz0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0UM-pK-yyc">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem title="Create Quiz" id="4Ei-iW-TFV">
+                                        <barButtonItem key="rightBarButtonItem" title="Create" id="8eF-Rr-TnP">
+                                            <connections>
+                                                <action selector="createQuiz:" destination="jpo-cm-YZ5" id="1b2-1f-DeP"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Quiz Title" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hGe-BJ-kiU">
+                                <rect key="frame" x="8" y="74" width="359" height="53"/>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="AZh-cz-1lm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Fact 1" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dyp-b2-ckg">
+                                <rect key="frame" x="8" y="138" width="359" height="120"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="hAA-wT-cMY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Fact 2" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YPr-Oo-VUs">
+                                <rect key="frame" x="8" y="269" width="359" height="120"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Jkz-lH-kLP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dyp-b2-ckg" firstAttribute="leading" secondItem="mVy-bp-kv5" secondAttribute="leading" constant="8" id="GPt-py-b4R"/>
+                            <constraint firstItem="mVy-bp-kv5" firstAttribute="trailing" secondItem="YPr-Oo-VUs" secondAttribute="trailing" constant="8" id="Mph-Q6-Cip"/>
+                            <constraint firstItem="dyp-b2-ckg" firstAttribute="top" secondItem="hGe-BJ-kiU" secondAttribute="bottom" constant="11" id="Rkn-az-NlR"/>
+                            <constraint firstItem="0UM-pK-yyc" firstAttribute="trailing" secondItem="mVy-bp-kv5" secondAttribute="trailing" id="Tmd-eP-Aab"/>
+                            <constraint firstItem="hGe-BJ-kiU" firstAttribute="leading" secondItem="mVy-bp-kv5" secondAttribute="leading" constant="8" id="Yg8-BK-jIw"/>
+                            <constraint firstItem="mVy-bp-kv5" firstAttribute="trailing" secondItem="hGe-BJ-kiU" secondAttribute="trailing" constant="8" id="g66-Fp-DRh"/>
+                            <constraint firstItem="0UM-pK-yyc" firstAttribute="top" secondItem="mVy-bp-kv5" secondAttribute="top" id="kSg-ik-Mp5"/>
+                            <constraint firstItem="0UM-pK-yyc" firstAttribute="leading" secondItem="mVy-bp-kv5" secondAttribute="leading" id="lvi-Qw-8oz"/>
+                            <constraint firstItem="hGe-BJ-kiU" firstAttribute="top" secondItem="0UM-pK-yyc" secondAttribute="bottom" constant="10" id="n4i-Jr-3VX"/>
+                            <constraint firstItem="YPr-Oo-VUs" firstAttribute="leading" secondItem="mVy-bp-kv5" secondAttribute="leading" constant="8" id="sDf-5Y-tGK"/>
+                            <constraint firstItem="YPr-Oo-VUs" firstAttribute="top" secondItem="dyp-b2-ckg" secondAttribute="bottom" constant="11" id="tcz-rB-Ua2"/>
+                            <constraint firstItem="mVy-bp-kv5" firstAttribute="trailing" secondItem="dyp-b2-ckg" secondAttribute="trailing" constant="8" id="vOJ-kB-UrS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mVy-bp-kv5"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Create" image="create-icon" id="KaE-u7-TJ5"/>
+                    <connections>
+                        <outlet property="createQuizButton" destination="8eF-Rr-TnP" id="B8I-G7-PEl"/>
+                        <outlet property="fact1TextView" destination="dyp-b2-ckg" id="pRO-fw-fEF"/>
+                        <outlet property="fact2TextView" destination="YPr-Oo-VUs" id="OQc-QU-TzD"/>
+                        <outlet property="quizTitleTextView" destination="hGe-BJ-kiU" id="MeV-Tf-5MC"/>
+                        <outlet property="tapGesture" destination="89O-GG-gkx" id="HNI-pU-4dD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rko-km-dzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="89O-GG-gkx">
+                    <connections>
+                        <action selector="tapAnywhere:" destination="jpo-cm-YZ5" id="kKq-UD-YrF"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1476" y="1200"/>
+            <point key="canvasLocation" x="-1476" y="1199.5502248875564"/>
         </scene>
         <!--Quizes-->
         <scene sceneID="oKl-Me-LOc">
@@ -191,6 +288,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v7I-3O-O0H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2415" y="-251"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="H3y-Zu-vrM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rUF-Ff-6Vc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="search-icon" id="hyg-ZZ-hS4"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IAq-dT-pRG">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9By-ZX-bUp" kind="relationship" relationship="rootViewController" id="4hP-jn-P1t"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UE1-7d-uiq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1476" y="480.80959520239884"/>
         </scene>
     </scenes>
     <resources>
